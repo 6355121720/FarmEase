@@ -142,8 +142,8 @@ const router = createBrowserRouter(
         <Route path="/showproducts" element={<ShowProducts />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/usersearch" element={<UserSearch />} />
+        <Route path="/chat" element={<Chat />} />
       </Route>
-      {/* <Route path="/chat" element={<Chat />} /> */}
     </Route>
   )
 );

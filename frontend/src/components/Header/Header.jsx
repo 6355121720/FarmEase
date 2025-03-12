@@ -74,7 +74,7 @@ const Header = () => {
     }
 
     const searchHandler = (e) => {
-        let searched = search
+        let searched = search.trim();
         if (!searched) {
             setSearchPopup(true)
             return
