@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import ProductDetail from "./ProductDetail";
 
 const ProductBox = ({ product }) => {
 
@@ -26,8 +27,19 @@ const ProductBox = ({ product }) => {
     })
   }
 
+  const hendlProduct = (event) => {
+    // console.log(event.currentTarget); // Logs the outermost div
+    // console.log(product); 
+    <ProductDetail product={product} />
+    navigate(`/product/${product.name }`);
+    // event.stopPropagation();
+  // Navigate to product detail page using product ID
+  }
+
   return (
-    <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform  overflow-hidden w-72 h-fit">
+    <div 
+    onClick={hendlProduct}
+    className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 transform  overflow-hidden w-72 h-fit">
       <div className="relative group">
         <img
           src={product.photo}
