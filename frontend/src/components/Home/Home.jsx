@@ -1,7 +1,7 @@
 import Community from './Community.jsx'
 import { useNavigate } from 'react-router-dom'
 import Carousel from './Carousel.jsx'
-import { motion } from 'framer-motion' // Add this import
+import { motion } from 'framer-motion'
 
 function Home() {
     const navigate = useNavigate()

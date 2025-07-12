@@ -1,7 +1,7 @@
 import ProductBox from './ProductBox'
 import { useSearchParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+import axios, { all } from 'axios'
 import { Loader2 , Filter } from 'lucide-react'
 
 const ShowProducts = () => {
@@ -27,6 +27,7 @@ const ShowProducts = () => {
         setSearchParams((prevParams) => {
             const newParams = new URLSearchParams(prevParams);
             newParams.set('category', cat);
+            newParams.set('region', "All");
             newParams.delete('search'); 
             return newParams;
         });
