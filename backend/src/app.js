@@ -10,6 +10,7 @@ import messageRouter from './routes/message.route.js'
 import chatSocket from './sockets/chatSocket.js'
 import productRouter from './routes/product.route.js'
 import chatRouter from './routes/chat.route.js'
+import orderRouter from './routes/order.route.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -41,6 +42,7 @@ app.use('/message', messageRouter)
 app.use('/product', productRouter)
 
 app.use('/chat', chatRouter)
+app.use('/order', orderRouter)
 
 app.get('/viraldobariya', (req,res) => {
     res.send(`${process.env.CORS_ORIGIN}`)

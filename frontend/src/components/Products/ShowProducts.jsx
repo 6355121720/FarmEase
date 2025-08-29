@@ -1,7 +1,7 @@
 import ProductBox from './ProductBox'
 import { useSearchParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+import axios, { all } from 'axios'
 import { Loader2 , Filter } from 'lucide-react'
 
 const ShowProducts = () => {
@@ -27,6 +27,7 @@ const ShowProducts = () => {
         setSearchParams((prevParams) => {
             const newParams = new URLSearchParams(prevParams);
             newParams.set('category', cat);
+            newParams.set('region', "All");
             newParams.delete('search'); 
             return newParams;
         });
@@ -93,7 +94,7 @@ const ShowProducts = () => {
                 </div>
 
                 <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
-                    {/* Sidebar Filter - Now collapsible on mobile */}
+                    {/* Sidebar*/}
                     <div className="lg:w-64 lg:shrink-0">
                         <div className="bg-white/80 backdrop-blur-sm p-4 lg:p-6 rounded-2xl shadow-lg lg:sticky lg:top-24">
                             <div className="flex items-center justify-between mb-4">
@@ -120,7 +121,7 @@ const ShowProducts = () => {
                         </div>
                     </div>
 
-                    {/* Product Grid with fixed sizing */}
+                    {/* Products */}
                     <div className="flex-1 w-full">
                         {products.length > 0 ? (
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 gap-4 sm:gap-6 place-items-center">

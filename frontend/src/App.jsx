@@ -116,6 +116,7 @@ import UserSearch from "./components/Header/UserSearch.jsx";
 import Chat from "./components/Extras/Chat.jsx";
 import { Loader2 } from "lucide-react";
 import PrivateRoutes from "./components/utils/PrivateRoutes.jsx";
+import ProductDetail from "./components/Products/ProductDetail.jsx";
 export const socket = io(import.meta.env.VITE_BACKEND_API);
 
 console.log(location.pathname);
@@ -141,9 +142,10 @@ const router = createBrowserRouter(
         <Route path="/addproduct" element={<CreateProduct />} />
         <Route path="/showproducts" element={<ShowProducts />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/usersearch" element={<UserSearch />} />
+        <Route path="/chat" element={<Chat />} />
       </Route>
-      {/* <Route path="/chat" element={<Chat />} /> */}
     </Route>
   )
 );

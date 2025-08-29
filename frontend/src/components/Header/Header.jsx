@@ -74,12 +74,13 @@ const Header = () => {
     }
 
     const searchHandler = (e) => {
-        let searched = search
+        let searched = search.trim().toLowerCase();
         if (!searched) {
-            setSearchPopup(true)
-            return
+            setSearchPopup(true);
+            return;
         }
-        navigate(`/showproducts?search=${encodeURIComponent(searched)}&category=${encodeURIComponent('All')}&region=${encodeURIComponent('All')}`)
+    
+        navigate(`/showproducts?search=${encodeURIComponent(searched)}&category=${encodeURIComponent(category)}&region=${encodeURIComponent(region)}`);
         setSearch('');
     }
 

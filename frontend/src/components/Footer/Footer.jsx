@@ -79,7 +79,7 @@ const Footer = () => {
                         </p>
                         <p className="flex items-start gap-3 text-green-100/90">
                             <span className="text-lg">📞</span>
-                            <span>+91-6355121720</span>
+                            <span>+91-6353623425</span>
                         </p>
                         <p className="flex items-start gap-3 text-green-100/90">
                             <span className="text-lg">📧</span>
